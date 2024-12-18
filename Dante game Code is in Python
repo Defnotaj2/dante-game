@@ -2,68 +2,127 @@ import time
 def introduction():
     print("Welcome to Dante Alighieri's Inferno - A Journey Through the Nine Circles of Hell.")
     time.sleep(2)
-    print("\nIn the middle of life's journey, you, Dante, find yourself lost in a dark wood.")
-    print("The straight path has been abandoned, and the shadows of sin engulf you.")
-    print("Virgil, the Roman poet, appears as a guide sent by Heaven.")
-    print("Together, you must brave Hell's circles to find salvation.\n")
+    print("\n\"Midway upon the journey of our life, I found myself within a forest dark, For the straightforward path had been lost.\"")
+    print("You, Dante, are lost, and Heaven has sent Virgil, the Roman poet, to guide you through Hell.")
+    print("Together, you must brave the nine circles of Hell and seek salvation beyond.\n")
     time.sleep(4)
 def limbo():
     print("\n--- CIRCLE 1: LIMBO ---")
-    print("Here dwell the virtuous pagans, unbaptized souls who knew no sin but lacked the light of faith.")
-    print("The air is heavy with sighs, and the sound of gentle weeping fills the void.")
+    print("Here lie the virtuous pagans and unbaptized souls who knew no sin but lacked the light of faith.")
+    print("The air is filled with sighs, a place where great minds—Homer, Ovid, and Aristotle—dwell.")
     time.sleep(2)
-    print("\nVirgil urges you to move on, for no torment occurs here, only eternal longing.")
-    choice = input("Do you (1) heed Virgil's advice and proceed or (2) pause to speak with the noble souls? Enter 1 or 2: ")
+    print("\nVirgil says, \"These souls are not tormented, but their grief is eternal for they live without hope.\"")
+    choice = input("Do you (1) heed Virgil's advice to proceed, or (2) pause to speak with these noble souls? Enter 1 or 2: ")
     if choice == "1":
-        print("\nVirgil nods approvingly, and you both proceed into the deeper darkness.")
+        print("\nVirgil nods, and together you leave Limbo’s shadows behind.")
         return True
     elif choice == "2":
-        print("\nYou linger too long, drawn into endless conversations of sorrow. Lost in Limbo, you forget your purpose. Game Over.")
+        print("\nYou linger too long among the sorrowful. Lost in conversation, you forget the journey. Game Over.")
         return False
     else:
-        print("\nVirgil frowns. 'Dante, we must choose wisely.' Try again.")
+        print("\n\"We must move, Dante,\" Virgil urges. \"Time is precious.\" Try again.")
         return limbo()
 def lust():
     print("\n--- CIRCLE 2: LUST ---")
-    print("A violent storm hurls the damned, those who gave themselves to carnal sins, forever trapped in a whirlwind of desire.")
+    print("The howling winds of a violent storm toss souls who surrendered to carnal desires.")
     time.sleep(2)
-    print("\nAmidst the howling winds, you see shadows of lovers like Paolo and Francesca, who cry for their tragic fate.")
-    choice = input("Do you (1) brace against the winds and push forward, or (2) call out to Francesca to hear her tale? Enter 1 or 2: ")
+    print("\n\"Francesca and Paolo drift here,\" Virgil tells you. \"Two lovers condemned for their passions.\"")
+    choice = input("Do you (1) press on through the storm or (2) call out to hear Francesca’s tale? Enter 1 or 2: ")
     if choice == "1":
-        print("\nYou fight against the tempest with Virgil’s help, the winds clawing at your soul. Yet, you prevail and move onward.")
+        print("\nYou brace against the winds, Virgil shielding you. The storm screams, but you prevail.")
         return True
     elif choice == "2":
-        print("\nFrancesca's story of forbidden love captivates you, and the winds seize their chance. You are swept away. Game Over.")
+        print("\nFrancesca’s tale of forbidden love grips your heart. Distracted, the winds pull you into the storm. Game Over.")
         return False
     else:
-        print("\nVirgil shouts over the storm. 'Dante, choose!' Try again.")
+        print("\nVirgil shouts, \"Do not falter here! Choose!\"")
         return lust()
 def gluttony():
     print("\n--- CIRCLE 3: GLUTTONY ---")
-    print("Cold, filthy rain pours eternally upon the gluttonous, who wallow in the mire like beasts.")
-    print("Cerberus, the three-headed hound of Hell, guards this circle, tearing and snarling at the damned souls.")
-    time.sleep(3)
-    choice = input("Do you (1) offer Cerberus a distraction to sneak past, or (2) confront the beast head-on? Enter 1 or 2: ")
+    print("A foul rain of filth and putrid water falls eternally on the gluttonous, who lie wallowing in the mire.")
+    time.sleep(2)
+    print("Cerberus, the three-headed hound, snarls and snaps, his hunger unending.")
+    choice = input("Do you (1) distract Cerberus with a morsel, or (2) confront the beast? Enter 1 or 2: ")
     if choice == "1":
-        print("\nYou hurl a piece of food you find on the ground. Cerberus lunges for it, allowing you to pass unseen.")
-        print("Virgil smiles faintly at your cunning. 'Well done, Dante.'")
+        print("\nVirgil instructs you to hurl mud into Cerberus’s maw. Distracted, the beast lets you pass.")
         return True
     elif choice == "2":
-        print("\nYou foolishly charge at Cerberus. The beast’s jaws close upon you, and darkness swallows your vision. Game Over.")
+        print("\nCerberus lunges, his jaws tearing at your soul. Darkness claims you. Game Over.")
         return False
     else:
-        print("\nVirgil shakes his head. 'This is no time for hesitation!' Try again.")
+        print("\nVirgil warns, \"This is no time for heroics!\" Try again.")
         return gluttony()
+def greed():
+    print("\n--- CIRCLE 4: GREED ---")
+    print("The avaricious and prodigal clash eternally, rolling great stones at one another with rage.")
+    print("\"Why do you hoard? Why do you squander?\" they scream, consumed by their folly.")
+    time.sleep(2)
+    choice = input("Do you (1) slip past quietly, or (2) try to question their torment? Enter 1 or 2: ")
+    if choice == "1":
+        print("\nYou follow Virgil’s lead, passing undetected between the warring souls.")
+        return True
+    elif choice == "2":
+        print("\nTheir fury turns upon you. Caught between the stones, you are crushed. Game Over.")
+        return False
+    else:
+        print("\n\"Move swiftly,\" Virgil whispers. \"This is no place for delay.\"")
+        return greed()
+def wrath():
+    print("\n--- CIRCLE 5: WRATH ---")
+    print("The River Styx churns with the wrathful, who strike at one another in blind rage.")
+    print("Below the surface, the sullen gurgle curses, trapped in eternal resentment.")
+    time.sleep(2)
+    choice = input("Do you (1) take the boat across with Virgil, or (2) challenge the souls in their anger? Enter 1 or 2: ")
+    if choice == "1":
+        print("\nVirgil secures a boat. Though the wrathful claw at the vessel, you cross safely.")
+        return True
+    elif choice == "2":
+        print("\nYou engage with the furious souls. They pull you into the black water. Game Over.")
+        return False
+    else:
+        print("\nVirgil warns, \"The river will not wait, Dante. Choose!\"")
+        return wrath()
+def heresy():
+    print("\n--- CIRCLE 6: HERESY ---")
+    print("Flaming tombs imprison heretics who denied the immortality of the soul.")
+    time.sleep(2)
+    print("You hear cries: \"Oh, when will the fire cease?\"")
+    choice = input("Do you (1) follow Virgil’s safe path, or (2) stop to examine the tombs? Enter 1 or 2: ")
+    if choice == "1":
+        print("\nYou press on, shielded by Virgil’s wisdom, avoiding the flames.")
+        return True
+    elif choice == "2":
+        print("\nThe fire draws you in, and the flames consume you. Game Over.")
+        return False
+    else:
+        print("\nVirgil urges, \"We cannot stop here, Dante!\"")
+        return heresy()
+def violence():
+    print("\n--- CIRCLE 7: VIOLENCE ---")
+    print("Divided into three rings: violence against others, self, and God.")
+    print("You see murderers boiling in blood, suicides trapped as thorny trees, and blasphemers tormented on burning sand.")
+    time.sleep(2)
+    choice = input("Do you (1) follow Virgil’s path, or (2) try to help one of the tormented souls? Enter 1 or 2: ")
+    if choice == "1":
+        print("\nVirgil guides you carefully, and you endure this harrowing ring unharmed.")
+        return True
+    elif choice == "2":
+        print("\nYour compassion blinds you, and the circle’s punishments claim you. Game Over.")
+        return False
+    else:
+        print("\n\"Trust me, Dante,\" Virgil says. \"We must not stray.\" Try again.")
+        return violence()
 def play_game():
     introduction()
-    if not limbo():
-        return
-    if not lust():
-        return
-    if not gluttony():
-        return
-    print("\nYou have braved the first three circles of Hell, Dante.")
-    print("Virgil places a hand on your shoulder. 'There is far more yet to endure, but take heart, for salvation lies beyond.'")
-    print("Your journey through the Inferno has only begun...\n")
+    if not limbo(): return
+    if not lust(): return
+    if not gluttony(): return
+    if not greed(): return
+    if not wrath(): return
+    if not heresy(): return
+    if not violence(): return
+    print("\nYou have endured the SEVEN circles of Hell, Dante.")
+    print("Virgil places a hand on your shoulder: \"The worst lies ahead, but fear not—salvation awaits those who persevere.\"")
     time.sleep(3)
+# Start the Game
 play_game()
