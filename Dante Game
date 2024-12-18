@@ -1,0 +1,69 @@
+import time
+def introduction():
+    print("Welcome to Dante Alighieri's Inferno - A Journey Through the Nine Circles of Hell.")
+    time.sleep(2)
+    print("\nIn the middle of life's journey, you, Dante, find yourself lost in a dark wood.")
+    print("The straight path has been abandoned, and the shadows of sin engulf you.")
+    print("Virgil, the Roman poet, appears as a guide sent by Heaven.")
+    print("Together, you must brave Hell's circles to find salvation.\n")
+    time.sleep(4)
+def limbo():
+    print("\n--- CIRCLE 1: LIMBO ---")
+    print("Here dwell the virtuous pagans, unbaptized souls who knew no sin but lacked the light of faith.")
+    print("The air is heavy with sighs, and the sound of gentle weeping fills the void.")
+    time.sleep(2)
+    print("\nVirgil urges you to move on, for no torment occurs here, only eternal longing.")
+    choice = input("Do you (1) heed Virgil's advice and proceed or (2) pause to speak with the noble souls? Enter 1 or 2: ")
+    if choice == "1":
+        print("\nVirgil nods approvingly, and you both proceed into the deeper darkness.")
+        return True
+    elif choice == "2":
+        print("\nYou linger too long, drawn into endless conversations of sorrow. Lost in Limbo, you forget your purpose. Game Over.")
+        return False
+    else:
+        print("\nVirgil frowns. 'Dante, we must choose wisely.' Try again.")
+        return limbo()
+def lust():
+    print("\n--- CIRCLE 2: LUST ---")
+    print("A violent storm hurls the damned, those who gave themselves to carnal sins, forever trapped in a whirlwind of desire.")
+    time.sleep(2)
+    print("\nAmidst the howling winds, you see shadows of lovers like Paolo and Francesca, who cry for their tragic fate.")
+    choice = input("Do you (1) brace against the winds and push forward, or (2) call out to Francesca to hear her tale? Enter 1 or 2: ")
+    if choice == "1":
+        print("\nYou fight against the tempest with Virgil’s help, the winds clawing at your soul. Yet, you prevail and move onward.")
+        return True
+    elif choice == "2":
+        print("\nFrancesca's story of forbidden love captivates you, and the winds seize their chance. You are swept away. Game Over.")
+        return False
+    else:
+        print("\nVirgil shouts over the storm. 'Dante, choose!' Try again.")
+        return lust()
+def gluttony():
+    print("\n--- CIRCLE 3: GLUTTONY ---")
+    print("Cold, filthy rain pours eternally upon the gluttonous, who wallow in the mire like beasts.")
+    print("Cerberus, the three-headed hound of Hell, guards this circle, tearing and snarling at the damned souls.")
+    time.sleep(3)
+    choice = input("Do you (1) offer Cerberus a distraction to sneak past, or (2) confront the beast head-on? Enter 1 or 2: ")
+    if choice == "1":
+        print("\nYou hurl a piece of food you find on the ground. Cerberus lunges for it, allowing you to pass unseen.")
+        print("Virgil smiles faintly at your cunning. 'Well done, Dante.'")
+        return True
+    elif choice == "2":
+        print("\nYou foolishly charge at Cerberus. The beast’s jaws close upon you, and darkness swallows your vision. Game Over.")
+        return False
+    else:
+        print("\nVirgil shakes his head. 'This is no time for hesitation!' Try again.")
+        return gluttony()
+def play_game():
+    introduction()
+    if not limbo():
+        return
+    if not lust():
+        return
+    if not gluttony():
+        return
+    print("\nYou have braved the first three circles of Hell, Dante.")
+    print("Virgil places a hand on your shoulder. 'There is far more yet to endure, but take heart, for salvation lies beyond.'")
+    print("Your journey through the Inferno has only begun...\n")
+    time.sleep(3)
+play_game()
