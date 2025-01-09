@@ -1,128 +1,180 @@
+import random
 import time
-def introduction():
-    print("Welcome to Dante Alighieri's Inferno - A Journey Through the Nine Circles of Hell.")
-    time.sleep(2)
-    print("\n\"Midway upon the journey of our life, I found myself within a forest dark, For the straightforward path had been lost.\"")
-    print("You, Dante, are lost, and Heaven has sent Virgil, the Roman poet, to guide you through Hell.")
-    print("Together, you must brave the nine circles of Hell and seek salvation beyond.\n")
-    time.sleep(4)
-def limbo():
-    print("\n--- CIRCLE 1: LIMBO ---")
-    print("Here lie the virtuous pagans and unbaptized souls who knew no sin but lacked the light of faith.")
-    print("The air is filled with sighs, a place where great minds—Homer, Ovid, and Aristotle—dwell.")
-    time.sleep(2)
-    print("\nVirgil says, \"These souls are not tormented, but their grief is eternal for they live without hope.\"")
-    choice = input("Do you (1) heed Virgil's advice to proceed, or (2) pause to speak with these noble souls? Enter 1 or 2: ")
-    if choice == "1":
-        print("\nVirgil nods, and together you leave Limbo’s shadows behind.")
-        return True
-    elif choice == "2":
-        print("\nYou linger too long among the sorrowful. Lost in conversation, you forget the journey. Game Over.")
-        return False
-    else:
-        print("\n\"We must move, Dante,\" Virgil urges. \"Time is precious.\" Try again.")
-        return limbo()
-def lust():
-    print("\n--- CIRCLE 2: LUST ---")
-    print("The howling winds of a violent storm toss souls who surrendered to carnal desires.")
-    time.sleep(2)
-    print("\n\"Francesca and Paolo drift here,\" Virgil tells you. \"Two lovers condemned for their passions.\"")
-    choice = input("Do you (1) press on through the storm or (2) call out to hear Francesca’s tale? Enter 1 or 2: ")
-    if choice == "1":
-        print("\nYou brace against the winds, Virgil shielding you. The storm screams, but you prevail.")
-        return True
-    elif choice == "2":
-        print("\nFrancesca’s tale of forbidden love grips your heart. Distracted, the winds pull you into the storm. Game Over.")
-        return False
-    else:
-        print("\nVirgil shouts, \"Do not falter here! Choose!\"")
-        return lust()
-def gluttony():
-    print("\n--- CIRCLE 3: GLUTTONY ---")
-    print("A foul rain of filth and putrid water falls eternally on the gluttonous, who lie wallowing in the mire.")
-    time.sleep(2)
-    print("Cerberus, the three-headed hound, snarls and snaps, his hunger unending.")
-    choice = input("Do you (1) distract Cerberus with a morsel, or (2) confront the beast? Enter 1 or 2: ")
-    if choice == "1":
-        print("\nVirgil instructs you to hurl mud into Cerberus’s maw. Distracted, the beast lets you pass.")
-        return True
-    elif choice == "2":
-        print("\nCerberus lunges, his jaws tearing at your soul. Darkness claims you. Game Over.")
-        return False
-    else:
-        print("\nVirgil warns, \"This is no time for heroics!\" Try again.")
-        return gluttony()
-def greed():
-    print("\n--- CIRCLE 4: GREED ---")
-    print("The avaricious and prodigal clash eternally, rolling great stones at one another with rage.")
-    print("\"Why do you hoard? Why do you squander?\" they scream, consumed by their folly.")
-    time.sleep(2)
-    choice = input("Do you (1) slip past quietly, or (2) try to question their torment? Enter 1 or 2: ")
-    if choice == "1":
-        print("\nYou follow Virgil’s lead, passing undetected between the warring souls.")
-        return True
-    elif choice == "2":
-        print("\nTheir fury turns upon you. Caught between the stones, you are crushed. Game Over.")
-        return False
-    else:
-        print("\n\"Move swiftly,\" Virgil whispers. \"This is no place for delay.\"")
-        return greed()
-def wrath():
-    print("\n--- CIRCLE 5: WRATH ---")
-    print("The River Styx churns with the wrathful, who strike at one another in blind rage.")
-    print("Below the surface, the sullen gurgle curses, trapped in eternal resentment.")
-    time.sleep(2)
-    choice = input("Do you (1) take the boat across with Virgil, or (2) challenge the souls in their anger? Enter 1 or 2: ")
-    if choice == "1":
-        print("\nVirgil secures a boat. Though the wrathful claw at the vessel, you cross safely.")
-        return True
-    elif choice == "2":
-        print("\nYou engage with the furious souls. They pull you into the black water. Game Over.")
-        return False
-    else:
-        print("\nVirgil warns, \"The river will not wait, Dante. Choose!\"")
-        return wrath()
-def heresy():
-    print("\n--- CIRCLE 6: HERESY ---")
-    print("Flaming tombs imprison heretics who denied the immortality of the soul.")
-    time.sleep(2)
-    print("You hear cries: \"Oh, when will the fire cease?\"")
-    choice = input("Do you (1) follow Virgil’s safe path, or (2) stop to examine the tombs? Enter 1 or 2: ")
-    if choice == "1":
-        print("\nYou press on, shielded by Virgil’s wisdom, avoiding the flames.")
-        return True
-    elif choice == "2":
-        print("\nThe fire draws you in, and the flames consume you. Game Over.")
-        return False
-    else:
-        print("\nVirgil urges, \"We cannot stop here, Dante!\"")
-        return heresy()
-def violence():
-    print("\n--- CIRCLE 7: VIOLENCE ---")
-    print("Divided into three rings: violence against others, self, and God.")
-    print("You see murderers boiling in blood, suicides trapped as thorny trees, and blasphemers tormented on burning sand.")
-    time.sleep(2)
-    choice = input("Do you (1) follow Virgil’s path, or (2) try to help one of the tormented souls? Enter 1 or 2: ")
-    if choice == "1":
-        print("\nVirgil guides you carefully, and you endure this harrowing ring unharmed.")
-        return True
-    elif choice == "2":
-        print("\nYour compassion blinds you, and the circle’s punishments claim you. Game Over.")
-        return False
-    else:
-        print("\n\"Trust me, Dante,\" Virgil says. \"We must not stray.\" Try again.")
-        return violence()
+
+def typewriter(text, delay=0.05):
+    """Simulate typing effect for text output."""
+    for char in text:
+        print(char, end='', flush=True)
+        time.sleep(delay)
+    print()
+
+terraces = {
+    1: {
+        'name': 'The Terrace of the Proud',
+        'ring': 'A ring of stone representing the weight of pride',
+        'questions': [
+            {
+                'question': "What is the significance of the marble sculptures on the first terrace?",
+                'options': ["They represent the virtues opposite to the sin of pride", 
+                            "They represent the prideful souls in torment", 
+                            "They symbolize humility through their simplicity", 
+                            "They have no symbolic meaning"],
+                'answer': 0
+            },
+            {
+                'question': "Who is the first soul Dante encounters in the Terrace of the Proud?",
+                'options': ["Belacqua", "Pope Adrian V", "Orestes", "Manfred"],
+                'answer': 1
+            },
+            {
+                'question': "What is the punishment for the proud in Purgatory?",
+                'options': ["They are blinded by their own pride", 
+                            "They are forced to carry heavy boulders", 
+                            "They walk with bent backs", 
+                            "They are frozen in place"],
+                'answer': 2
+            }
+        ]
+    },
+    2: {
+        'name': 'The Terrace of the Envious',
+        'ring': 'A ring of thick fog symbolizing the darkness of envy',
+        'questions': [
+            {
+                'question': "What is the most notable punishment for the envious?",
+                'options': ["They are submerged in boiling water", 
+                            "They are deprived of sight and are forever blind", 
+                            "They are forced to wear blindfolds", 
+                            "They have to run constantly in circles"],
+                'answer': 1
+            },
+            {
+                'question': "Who does Dante encounter in this terrace who offers him guidance?",
+                'options': ["Sapia", "Guido del Duca", "Statius", "Virgil"],
+                'answer': 0
+            },
+            {
+                'question': "Which work of literature does the character Sapia refer to in this section?",
+                'options': ["The Aeneid", "The Iliad", "The Odyssey", "The Divine Comedy"],
+                'answer': 0
+            }
+        ]
+    },
+    3: {
+        'name': 'The Terrace of the Wrathful',
+        'ring': 'A ring of flames that represent the fire of wrath',
+        'questions': [
+            {
+                'question': "What is the key characteristic of the wrathful souls in this terrace?",
+                'options': ["They are covered in flames", 
+                            "They fight each other in an eternal battle", 
+                            "They stand still in cold flames", 
+                            "They are submerged in pitch"],
+                'answer': 1
+            },
+            {
+                'question': "Which famous classical figure does Dante encounter here, who is punished for his wrath?",
+                'options': ["Achilles", "Hercules", "Capaneus", "Perseus"],
+                'answer': 2
+            },
+            {
+                'question': "What lesson does the punishment in the Terrace of the Wrathful teach?",
+                'options': ["The consequences of unrestrained emotions", 
+                            "The futility of violent revenge", 
+                            "The value of forgiveness", 
+                            "All of the above"],
+                'answer': 3
+            }
+        ]
+    },
+    4: {
+        'name': 'The Terrace of the Slothful',
+        'ring': 'A ring of stagnant water symbolizing laziness',
+        'questions': [
+            {
+                'question': "What activity are the slothful souls condemned to perform?",
+                'options': ["They are perpetually sleeping", 
+                            "They chase after fleeting shadows", 
+                            "They are forced to shout out their sins", 
+                            "They constantly run with no goal"],
+                'answer': 1
+            },
+            {
+                'question': "Who does Dante meet in the Terrace of the Slothful?",
+                'options': ["Pope John XIII", "Statius", "Sapia", "Marco Lombardo"],
+                'answer': 3
+            },
+            {
+                'question': "What is the moral lesson of the slothful punishment?",
+                'options': ["The consequences of procrastination", 
+                            "The danger of indifference", 
+                            "The importance of hard work", 
+                            "All of the above"],
+                'answer': 2
+            }
+        ]
+    },
+    5: {
+        'name': 'The Terrace of the Avaricious and Prodigal',
+        'ring': 'A ring of gold representing the sin of excessive love for wealth',
+        'questions': [
+            {
+                'question': "What is the punishment for the avaricious in Purgatory?",
+                'options': ["They are covered in gold", 
+                            "They are forced to carry heavy weights", 
+                            "They must endlessly count coins", 
+                            "They are submerged in cold water"],
+                'answer': 1
+            },
+            {
+                'question': "Who is the notable soul that Dante meets here?",
+                'options': ["Pope Gregory I", "Hugh Capet", "St. Thomas Aquinas", "Abelard"],
+                'answer': 0
+            },
+            {
+                'question': "What does Dante learn from meeting the soul of Pope Gregory I?",
+                'options': ["That true wealth is in the heart", 
+                            "That power corrupts", 
+                            "That the love of wealth leads to ruin", 
+                            "That poverty is a virtue"],
+                'answer': 2
+            }
+        ]
+    },
+    # Similar setup for terraces 6 and 7 would follow...
+}
+
+def ask_questions(terrace):
+    typewriter(f"Welcome to the {terraces[terrace]['name']}")
+    typewriter(f"Ring: {terraces[terrace]['ring']}")
+    score = 0
+    for q in terraces[terrace]['questions']:
+        typewriter(q['question'])
+        for idx, option in enumerate(q['options']):
+            print(f"{idx + 1}. {option}")
+        
+        try:
+            answer = int(input("Your answer (1-4): ")) - 1
+            if answer == q['answer']:
+                typewriter("Correct!\n")
+                score += 1
+            else:
+                typewriter("Incorrect.\n")
+        except (ValueError, IndexError):
+            typewriter("Invalid input. Please enter a number between 1 and 4.\n")
+    
+    typewriter(f"Your score for the {terraces[terrace]['name']}: {score}/{len(terraces[terrace]['questions'])}\n")
+    return score
+
 def play_game():
-    introduction()
-    if not limbo(): return
-    if not lust(): return
-    if not gluttony(): return
-    if not greed(): return
-    if not wrath(): return
-    if not heresy(): return
-    if not violence(): return
-    print("\nYou have endured the SEVEN circles of Hell, Dante.")
-    print("Virgil places a hand on your shoulder: \"The worst lies ahead, but fear not—salvation awaits those who persevere.\"")
-    time.sleep(3)
-# Start the Game
-play_game()
+    typewriter("Welcome to Dante's Purgatorio Game!")
+    total_score = 0
+    for terrace in range(1, 8):  # Looping through all seven terraces
+        total_score += ask_questions(terrace)
+        if terrace < 7:
+            input("Press Enter to move to the next terrace...\n")
+    
+    typewriter(f"Game Over! Your total score is {total_score}.")
+
+if __name__ == "__main__":
+    play_game()
