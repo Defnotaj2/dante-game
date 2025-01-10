@@ -141,7 +141,57 @@ terraces = {
             }
         ]
     },
-    # Similar setup for terraces 6 and 7 would follow...
+    6: {
+        'name': 'The Terrace of the Gluttonous',
+        'ring': 'A ring of rain and hail symbolizing excess and consumption',
+        'questions': [
+            {
+                'question': "What is the punishment for the gluttonous in Purgatory?",
+                'options': ["They are forced to eat only bitter fruits", 
+                            "They are covered in filth", 
+                            "They are constantly hungry but can never eat", 
+                            "They are submerged in boiling oil"],
+                'answer': 2
+            },
+            {
+                'question': "Who does Dante encounter in this terrace who gives him guidance?",
+                'options': ["Forese Donati", "Pope Boniface VIII", "Dante’s father", "Virgil"],
+                'answer': 0
+            },
+            {
+                'question': "Which classical poet does Dante meet in this terrace?",
+                'options': ["Ovid", "Homer", "Horace", "Lucan"],
+                'answer': 1
+            }
+        ]
+    },
+    7: {
+        'name': 'The Terrace of the Lustful',
+        'ring': 'A ring of flames that purify the souls of the lustful',
+        'questions': [
+            {
+                'question': "What is the punishment for the lustful in Purgatory?",
+                'options': ["They are surrounded by constant flames", 
+                            "They must walk through a field of fire", 
+                            "They are whipped for their sins", 
+                            "They are trapped in a dark abyss"],
+                'answer': 1
+            },
+            {
+                'question': "Who does Dante meet in this terrace who shares their story?",
+                'options': ["Francesca da Rimini", "Cleopatra", "Helen of Troy", "Minos"],
+                'answer': 0
+            },
+            {
+                'question': "What is the primary lesson in the Terrace of the Lustful?",
+                'options': ["The destructiveness of uncontrolled passion", 
+                            "The need for self-control", 
+                            "The importance of chastity", 
+                            "All of the above"],
+                'answer': 3
+            }
+        ]
+    },
 }
 
 def ask_questions(terrace):
